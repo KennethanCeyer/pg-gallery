@@ -2,7 +2,7 @@
 *
 *  - PIGNOSE Gallery JS
 *  - DATE    2014-12-26
-*  - AUTHOR  PIGNOSE
+*  - AUTHOR  PIGNOSE(http://pigno.se)
 *  - VERSION 0.0.2
 *  - LICENCE MIT
 *

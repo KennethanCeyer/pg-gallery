@@ -3,7 +3,7 @@
 *  - PIGNOSE Gallery JS
 *  - DATE    2014-12-26
 *  - AUTHOR  PIGNOSE
-*  - VERSION 0.0.1
+*  - VERSION 0.0.2
 *  - LICENCE MIT
 *
 ****************************************/
@@ -14,7 +14,7 @@
 		name:       'PIGNOSE Gallery JS',
 		createDate: '2014-12-26',
 		updateDate: '2014-12-26',
-		version:    '0.0.1',
+		version:    '0.0.2',
 		author:     'kenneth ceyer',
 		email:      'kennethan@nhpcw.com',
 		dev:        {
@@ -82,7 +82,9 @@
 				lineWidth: 3,
 				lineColor: '#d81208',
 				time: 2400,
-				animTime: 300
+				animTime: 300,
+				auto: true,
+				hover: true
 			}, options), $this = this;
 			return $this.each(function() {
 				var $this = $(this);
@@ -126,33 +128,48 @@
 		process: function(opt) {
 			var $this = $(this), _t;
 			_interface._load($this);
-			_interface._bind($this.add(_config.plugin.lists), 'mouseover', function() {
-				try {
-					clearInterval(_t);
-				}
-				catch (e) { ; }
-			});
-			_interface._bind($this.add(_config.plugin.lists), 'mouseout', function() {
-				try {
-					clearInterval(_t);
-				}
-				catch (e) { ; }
-				_t = setInterval(function() {
-					_interface._load($this);
-					_config.plugin.index = (_config.plugin.index + 1) % _config.plugin.max;
+			if(opt.auto === true) {
+				_interface._bind($this.add(_config.plugin.lists), 'mouseover', function() {
+					try {
+						clearInterval(_t);
+					}
+					catch (e) { ; }
+				});
+				_interface._bind($this.add(_config.plugin.lists), 'mouseout', function() {
+					try {
+						clearInterval(_t);
+					}
+					catch (e) { ; }
+					_t = setInterval(function() {
+						_interface._load($this);
+						_config.plugin.index = (_config.plugin.index + 1) % _config.plugin.max;
+						_config.plugin.lists.find('.pignose_border:visible').hide();
+						_config.plugin.lists.eq(_config.plugin.index).children('.pignose_border').show();
+						(_config.plugin.views.eq(_config.plugin.index) || _config.plugin.views.eq(0)).show().siblings().hide();
+						_interface._save();
+					}, opt.time);
+				}, true);
+			}
+			if(opt.hover) {
+				_interface._bind(_config.plugin.lists, 'mouseover', function() {
+					var $this = $(this);
+					_config.plugin.index = $this.parent().index();
 					_config.plugin.lists.find('.pignose_border:visible').hide();
 					_config.plugin.lists.eq(_config.plugin.index).children('.pignose_border').show();
 					(_config.plugin.views.eq(_config.plugin.index) || _config.plugin.views.eq(0)).show().siblings().hide();
 					_interface._save();
-				}, opt.time);
-			}, true);
-			_interface._bind(_config.plugin.lists, 'mouseover', function() {
-				var $this = $(this);
-				_config.plugin.index = $this.parent().index();
-				_config.plugin.lists.find('.pignose_border:visible').hide();
-				_config.plugin.lists.eq(_config.plugin.index).children('.pignose_border').show();
-				(_config.plugin.views.eq(_config.plugin.index) || _config.plugin.views.eq(0)).show().siblings().hide();
-				_interface._save();
+				});
+			}
+			_interface._bind(_config.plugin.lists, 'click', function(event) {
+				if(opt.hover !== true) {
+					var $this = $(this);
+					_config.plugin.index = $this.parent().index();
+					_config.plugin.lists.find('.pignose_border:visible').hide();
+					_config.plugin.lists.eq(_config.plugin.index).children('.pignose_border').show();
+					(_config.plugin.views.eq(_config.plugin.index) || _config.plugin.views.eq(0)).show().siblings().hide();
+					_interface._save();
+				}
+				event.preventDefault();
 			});
 		}
 	}

@@ -7,6 +7,40 @@ PIGNOSE-Gallery
 
 Check demo page and enjoy it! [See Demo](http://pigno.se)
 
+----
+
+### Description
+
+- This plugin supports IE8+, Firefox, Chrome, Safari, Opera browser version.
+- This plugin needs `jQuery library 1.11.x+`.
+
 ### Usage
 
+1. Download or Clone the sources.
+2. Import jQuery library from [here](http://jquery.com/download/)
+3. Insert snippets like below.
+
+ ```javascript
+$(function() {
+	$('#visual .gallery').pignoseGallery({
+		list: $('#visual .gallery-thumbnails')
+	});
+});
+```
+4. Markup structure must be like below.
+
+ ```html
+<div id="visual">
+	<div class="gallery">
+		<img src="[[img src]]" alt="" />
+		<img src="[[img src]]" alt="" />
+		<img src="[[img src]]" alt="" />
+	</div>
+	<div class="gallery-thumbnails">
+		<a href="#"><img src="[[thumbnail src]]" alt="" /></a>
+		<a href="#"><img src="[[thumbnail src]]" alt="" /></a>
+		<a href="#"><img src="[[thumbnail src]]" alt="" /></a>
+	</div>
+</div>
+```
 ### Options

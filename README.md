@@ -44,6 +44,16 @@ $(function() {
 </div>
 ```
 
+### If you have the Bower
+
+1. open a command line and type this
+
+ ```shell
+bower install pg-gallery
+ ```
+ 
+2. move `assets/js/pignose.gallery.min.js` to your project folder.
+
 ### Options
 | name | value | default | description |
 |------|-------|---------|-------------|

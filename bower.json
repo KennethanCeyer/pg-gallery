@@ -1,0 +1,23 @@
+{
+  "name": "pg-gallery",
+  "version": "0.0.2",
+  "homepage": "https://github.com/KennethanCeyer/PIGNOSE-Gallery",
+  "authors": [
+    "PIGNOSE"
+  ],
+  "description": "jQuery simple gallery plugin.",
+  "main": "assets/js/pignose.gallery.js",
+  "keywords": [
+    "gallery",
+    "jQuery",
+    "pignose"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -43,6 +43,7 @@ $(function() {
 	</div>
 </div>
 ```
+
 ### Options
 | name | value | default | description |
 |------|-------|---------|-------------|

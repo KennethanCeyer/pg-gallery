@@ -44,3 +44,12 @@ $(function() {
 </div>
 ```
 ### Options
+| name | value | default | description |
+|------|-------|---------|-------------|
+| focus | `number` | 0 | initial index of focused image. |
+| list | `jQuery object` | null | the gallery thumbnails for gallery views. |
+| lineWidth | `number` | 3 | line width for focus style. |
+| lineColor | `string` | #d81208 | line color for focus style. |
+| time | `number` | 2400 | the millisecond time for change to animation. |
+| auto | `boolean` | true | if this property is on, you can pause/play to change the gallery by mouseover or mosueout. |
+| hover | `boolean` | true | if this property is on, you can control them by mouseover on thumbnails. |

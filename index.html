@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>PIGNOSE Gallary Demo</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/for-demo/prism.css" />
+	<style type="text/css">
+		@import url(https://fonts.googleapis.com/css?family=Raleway);
+		html, body {
+			position: relative;
+			height: 100%;
+		}
+
+		#wrapper {
+			padding-bottom: 40px;
+		}
+
+		.header {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding-top: 40px;
+			padding-bottom: 40px;
+			margin-bottom: 40px;
+			border-bottom: 1px solid #efefef;
+			text-align: center;
+		}
+
+		.header h1 {
+			margin-bottom: 20px;
+			font-size: 24px;
+			font-weight: 400;
+			font-family: 'Raleway', 'helvetica', 'sans-serif';
+			color: #333333;
+		}
+
+		#visual {
+			position: relative;
+			width: 600px;
+			height: 320px;
+			border: 1px solid #d8d8d8;
+			margin: 60px auto 0;
+			overflow: hidden;
+		}
+
+		#visual .gallery img {
+			width: 100%;
+		}
+
+		#visual .gallery-thumbnails {
+			position: absolute;
+			padding: 10px;
+			background-color: rgba(0, 0, 0, .6);
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			text-align: center;
+			box-sizing: border-box;
+			-o-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+		}
+
+		#visual .gallery-thumbnails a {
+			margin: 0 5px;
+		}
+
+		#visual .gallery-thumbnails a img {
+			height: 60px;
+		}
+
+		#content, #sample {
+			width: 1200px;
+			margin: 0 auto;
+			margin-top: 40px;
+			padding-top: 40px;
+			border-top: 1px solid #efefef;
+			font-family: 'Raleway', 'helvetica', 'sans-serif';
+			text-align: center;
+		}
+
+		#content h3, #sample h3 {
+			margin-bottom: 40px;
+		}
+
+		#content table {
+			font-size: 115%;
+			text-align: left;
+		}
+
+		#sample pre {
+			font-size: 115%;
+		}
+	</style>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/pignose.gallery.js"></script>
+	<script type="text/javascript" src="assets/for-demo/prism.min.js"></script>
+	<script type="text/javascript">
+	$(function() {
+		$('#visual .gallery').pignoseGallery({
+			list: $('#visual .gallery-thumbnails')
+		});
+
+		$('#sample .tab a').click(function (e) {
+			e.preventDefault()
+			$(this).tab('show')
+		})
+	});
+	</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div class="header">
+			<img src="assets/img/pignose-logo.jpg" alt="" />
+			<h1>PIGNOSE Gallery</h1>
+			<a href="https://github.com/KennethanCeyer/PIGNOSE-Gallery" target="_blank" class="btn btn-primary">View project on the Github</a>
+		</div>
+		<div id="visual">
+			<div class="gallery">
+				<img src="https://images.unsplash.com/photo-1439396087961-98bc12c21176?q=80&fm=jpg&s=bce7579fe32b464cc2d53c5c144a2de4" alt="" />
+				<img src="https://images.unsplash.com/photo-1439003511744-2a0490ea0a88?q=80&fm=jpg&s=4dd5809698048edf8b82eedb82ca8cec" alt="" />
+				<img src="https://images.unsplash.com/photo-1438978280647-f359d95ebda4?q=80&fm=jpg&s=73cb1239b517411534379c92660b2660" alt="" />
+				<img src="https://images.unsplash.com/photo-1438978280647-f359d95ebda4?q=80&fm=jpg&s=73cb1239b517411534379c92660b2660" alt="" />
+				<img src="https://images.unsplash.com/photo-1438109519352-a52c41243c1a?q=80&fm=jpg&s=5e94365bd19daae00de012e317152490" alt="" />
+			</div>
+			<div class="gallery-thumbnails">
+				<a href="#"><img src="https://images.unsplash.com/photo-1439396087961-98bc12c21176?q=80&fm=jpg&s=bce7579fe32b464cc2d53c5c144a2de4" alt="" /></a>
+				<a href="#"><img src="https://images.unsplash.com/photo-1439003511744-2a0490ea0a88?q=80&fm=jpg&s=4dd5809698048edf8b82eedb82ca8cec" alt="" /></a>
+				<a href="#"><img src="https://images.unsplash.com/photo-1438978280647-f359d95ebda4?q=80&fm=jpg&s=73cb1239b517411534379c92660b2660" alt="" /></a>
+				<a href="#"><img src="https://images.unsplash.com/photo-1438978280647-f359d95ebda4?q=80&fm=jpg&s=73cb1239b517411534379c92660b2660" alt="" /></a>
+				<a href="#"><img src="https://images.unsplash.com/photo-1438109519352-a52c41243c1a?q=80&fm=jpg&s=5e94365bd19daae00de012e317152490" alt="" /></a>
+			</div>
+		</div>
+		<div id="content">
+			<h3>options</h3>
+			<table class="table table-striped table-hover">
+				<thead>
+					<tr>
+						<th>name</th>
+						<th>value</th>
+						<th>default</th>
+						<th>description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>focus</td>
+						<td><div class="label label-primary">number</div></td>
+						<td>0</td>
+						<td>initial index of focused image.</td>
+					</tr>
+					<tr>
+						<td>list</td>
+						<td><div class="label label-primary">jQuery object</div></td>
+						<td>null</td>
+						<td>the gallery thumbnails for gallery views.</td>
+					</tr>
+					<tr>
+						<td>lineWidth</td>
+						<td><div class="label label-primary">number</div></td>
+						<td>3</td>
+						<td>line width for focus style.</td>
+					</tr>
+					<tr>
+						<td>lineColor</td>
+						<td><div class="label label-primary">string</div></td>
+						<td>#d81208</td>
+						<td>line color for focus style.</td>
+					</tr>
+					<tr>
+						<td>time</td>
+						<td><div class="label label-primary">number</div></td>
+						<td>2400</td>
+						<td>the millisecond time for change to animation.</td>
+					</tr>
+					<tr>
+						<td>auto</td>
+						<td><div class="label label-primary">boolean</div></td>
+						<td>true</td>
+						<td>if this property is on, you can pause/play to change the gallery to mouseover or mouseout.</td>
+					</tr>
+					<tr>
+						<td>hover</td>
+						<td><div class="label label-primary">boolean</div></td>
+						<td>true</td>
+						<td>if this property is on, you can control by mouseover on thumbnail</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="sample">
+			<h3>sample</h3>
+			<ul class="nav nav-tabs tab">
+				<li role="presentation" class="active"><a href="#html" data-toggle="tab" aria-controls="html">HTML</a></li>
+				<li role="presentation"><a href="#javascript" data-toggle="tab" aria-controls="javascript">Javascript</a></li>
+			</ul>
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="html">
+					<pre><code class="language-markup">&lt;div id=&quot;visual&quot;&gt;
+	&lt;div class=&quot;gallery&quot;&gt;
+		&lt;img src=&quot;[[img src]]&quot; alt=&quot;&quot; /&gt;
+		&lt;img src=&quot;[[img src]]&quot; alt=&quot;&quot; /&gt;
+		&lt;img src=&quot;[[img src]]&quot; alt=&quot;&quot; /&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;gallery-thumbnails&quot;&gt;
+		&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;[[thumbnail src]]&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+		&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;[[thumbnail src]]&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+		&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;[[thumbnail src]]&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="javascript">
+					<pre><code class="language-js">$(function() {
+	$('#visual .gallery').pignoseGallery({
+		list: $('#visual .gallery-thumbnails')
+	});
+});</code></pre>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

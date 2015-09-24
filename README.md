@@ -44,7 +44,7 @@ $(function() {
 </div>
 ```
 
-### If you have the Bower
+### If you are using the Bower
 
 1. open a command line and type this
 

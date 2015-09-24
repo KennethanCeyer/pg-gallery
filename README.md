@@ -56,7 +56,7 @@ bower install pg-gallery
 
 ### Options
 | name | value | default | description |
-|------|-------|---------|-------------|
+|------|------------|---------|-------------|
 | focus | `number` | 0 | initial index of focused image. |
 | list | `jQuery object` | null | the gallery thumbnails for gallery views. |
 | lineWidth | `number` | 3 | line width for focus style. |

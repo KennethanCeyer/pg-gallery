@@ -20,8 +20,6 @@ Check demo page and enjoy it! [See Demo](http://www.pigno.se/barn/PIGNOSE-Galler
 2. Import jQuery library from [here](http://jquery.com/download/)
 3. Insert snippets like below.
 
-#### Javascript
-
  ```javascript
 $(function() {
 	$('#visual .gallery').pignoseGallery({
@@ -30,8 +28,6 @@ $(function() {
 });
 ```
 4. Markup structure must be like below.
-
-#### HTML
 
  ```html
 <div id="visual">

@@ -14,11 +14,13 @@ Check demo page and enjoy it! [See Demo](http://www.pigno.se/barn/PIGNOSE-Galler
 - This plugin supports IE8+, Firefox, Chrome, Safari, Opera browser version.
 - This plugin needs `jQuery library 1.11.x+`.
 
-### Usage
+## Usage
 
 1. Download or Clone the sources.
 2. Import jQuery library from [here](http://jquery.com/download/)
 3. Insert snippets like below.
+
+#### Javascript
 
  ```javascript
 $(function() {
@@ -28,6 +30,8 @@ $(function() {
 });
 ```
 4. Markup structure must be like below.
+
+#### HTML
 
  ```html
 <div id="visual">
@@ -54,7 +58,7 @@ bower install pg-gallery
  
 2. move `assets/js/pignose.gallery.min.js` to your project folder.
 
-### Options
+## Options
 | name | value           | default | description |
 |------|-----------------|---------|-------------|
 | focus | `number` | 0 | initial index of focused image. |

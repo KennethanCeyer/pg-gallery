@@ -64,3 +64,11 @@ bower install pg-gallery
 | time | `number` | 2400 | the millisecond time for change to animation. |
 | auto | `boolean` | true | if this property is on, you can pause/play to change the gallery by mouseover or mosueout. |
 | hover | `boolean` | true | if this property is on, you can control them by mouseover on thumbnails. |
+
+## Issues
+
+> We are welcome about announcing the issue.
+
+Please inform us, If you find some problems.
+
+Thank you!

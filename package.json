@@ -1,0 +1,27 @@
+{
+  "name": "pg-gallery",
+  "version": "1.0.0",
+  "description": "The slider to support prallax animation with jQuery.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KennethanCeyer/PIGNOSE-Gallery.git"
+  },
+  "keywords": [
+    "pignose",
+    "parallaxslider",
+    "parallax",
+    "jQuery",
+    "plugin",
+    "slider"
+  ],
+  "author": "Kenneth Ceyer <kennethan@nhpcw.com> (http://www.pigno.se)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KennethanCeyer/PIGNOSE-Gallery/issues"
+  },
+  "homepage": "https://github.com/KennethanCeyer/PIGNOSE-Gallery#readme"
+}

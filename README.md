@@ -3,7 +3,7 @@ PIGNOSE-Gallery
 
 > jQuery simple gallery plugin.
 
-[![npm version](https://badge.fury.io/js/pg-gallery.svg)](https://badge.fury.io/js/pg-gallery) [![Join the chat at https://gitter.im/KennethanCeyer/PIGNOSE](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/KennethanCeyer/PIGNOSE?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![npm version](https://badge.fury.io/js/pg-gallery.svg)](https://badge.fury.io/js/pg-gallery) [![Bower version](https://badge.fury.io/bo/pg-gallery.svg)](https://badge.fury.io/bo/pg-gallery) [![Join the chat at https://gitter.im/KennethanCeyer/PIGNOSE](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/KennethanCeyer/PIGNOSE?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ![Sample Image](http://www.pigno.se/barn/PIGNOSE-Gallery/assets/img/sample.jpg)
 

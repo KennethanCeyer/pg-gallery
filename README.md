@@ -46,7 +46,7 @@ $(function() {
 </div>
 ```
 
-### If you are using Bower
+### If you use Bower
 
 1. open a command line and type this
 
@@ -56,7 +56,7 @@ bower install pg-gallery
  
 2. move `assets/js/pignose.gallery.min.js` to your project folder.
 
-### If you are using npm
+### If you use npm
 
 1. open a command line and type this
 
@@ -77,8 +77,8 @@ npm install pg-gallery
 
 ## Issues
 
-> We are welcome about announcing the issue.
+> We are welcome to receive bug reports.
 
-Please inform us, If you find some problems.
+Please report to us, If you find some problems.
 
 Thank you!

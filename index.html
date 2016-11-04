@@ -1,235 +1,175 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no">
-	<title>PIGNOSE Gallary Demo</title>
-	<link rel="stylesheet" href="assets/for-demo/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/for-demo/prism.css" />
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no" />
+	<meta property="og:url" content="http://www.pigno.se/barn/PIGNOSE-Gallery">
+	<meta property="og:type" content="product" />
+	<meta property="og:title" content="PIGNOSE Gallery" />
+	<meta property="og:description" content="PIGNOSE Gallery is so simple and fast gallery style component." />
+	<meta property="og:image" content="http://www.pigno.se/barn/PIGNOSE-Gallery/demo/img/cover@250.png" />
+	<meta property="og:site_name" content="PIGNOSE" />
+	<title>PIGNOSE Gallary</title>
+	<link rel="shortcut icon" type="image/x-icon" href="demo/img/pignose-ico.ico" />
+	<link rel="stylesheet" href="demo/css/semantic.ui.min.css">
+	<link rel="stylesheet" href="demo/css/prism.css" />
+	<link rel="stylesheet" href="demo/css/style.css" />
+	<link rel="stylesheet" href="src/css/pignose.gallery.css" />
 	<style type="text/css">
-		@import url(https://fonts.googleapis.com/css?family=Raleway);
-		html, body {
-			position: relative;
-			height: 100%;
-		}
-
-		#wrapper {
-			padding-bottom: 40px;
-		}
-
-		.header {
-			max-width: 1200px;
-			width: 80%;
+		.pignose-gallery {
 			margin: 0 auto;
-			padding-top: 40px;
-			padding-bottom: 40px;
-			margin-bottom: 40px;
-			border-bottom: 1px solid #efefef;
-			text-align: center;
-		}
-
-		.header h1 {
-			margin-bottom: 20px;
-			font-size: 24px;
-			font-weight: 400;
-			font-family: 'Raleway', 'helvetica', 'sans-serif';
-			color: #333333;
-		}
-
-		#visual {
-			position: relative;
 			width: 600px;
-			height: 320px;
-			border: 1px solid #d8d8d8;
-			margin: 60px auto 0;
-			overflow: hidden;
+			height: 360px;
 		}
 
-		#visual .gallery img {
-			width: 100%;
-		}
-
-		#visual .gallery-thumbnails {
-			position: absolute;
-			padding: 10px;
-			background-color: rgba(0, 0, 0, .6);
-			left: 0;
-			bottom: 0;
-			width: 100%;
-			text-align: center;
-			box-sizing: border-box;
-			-o-box-sizing: border-box;
-			-moz-box-sizing: border-box;
-			-webkit-box-sizing: border-box;
-		}
-
-		#visual .gallery-thumbnails a {
-			margin: 0 5px;
-		}
-
-		#visual .gallery-thumbnails a img {
-			height: 60px;
-		}
-
-		.article {
-			max-width: 1200px;
-			width: 80%;
-			margin: 0 auto;
-			margin-top: 40px;
-			padding-top: 40px;
-			border-top: 1px solid #efefef;
-			font-family: 'Raleway', 'helvetica', 'sans-serif';
-			text-align: center;
-		}
-
-		.article h3 {
-			margin-bottom: 40px;
-		}
-
-		.article table {
-			font-size: 115%;
-			text-align: left;
-		}
-
-		.article pre {
-			font-size: 115%;
+		.pignose-gallery .ribbon {
+			position: absolute !important;
+			top: 1em;
+			left: auto !important;
+			right: -6em !important;
+			z-index: 50;
 		}
 	</style>
-	<script type="text/javascript" src="assets/for-demo/jquery.latest.min.js"></script>
-	<script type="text/javascript" src="assets/for-demo/bootstrap.min.js"></script>
-	<script type="text/javascript" src="assets/js/pignose.gallery.js"></script>
-	<script type="text/javascript" src="assets/for-demo/prism.min.js"></script>
+	<script type="text/javascript" src="demo/js/jquery.latest.min.js"></script>
+	<script type="text/javascript" src="demo/js/semantic.ui.min.js"></script>
+	<script type="text/javascript" src="demo/js/prism.min.js"></script>
+	<script type="text/javascript" src="src/js/pignose.gallery.js"></script>
 	<script type="text/javascript">
 	$(function() {
-		$('#visual .gallery').pignoseGallery({
-			list: $('#visual .gallery-thumbnails')
+		$('.gallery').pignoseGallery({
+			thumbnails: '.gallery-thumbnails'
 		});
 
-		$('#sample .tab a').click(function (e) {
-			e.preventDefault()
-			$(this).tab('show')
-		})
+		$('.menu .item').tab();
 	});
 	</script>
 </head>
 <body>
 	<div id="wrapper">
 		<div class="header">
-			<img src="assets/img/pignose-logo.jpg" alt="" />
+			<img src="demo/img/pignose-logo.png" alt="" />
 			<h1>PIGNOSE Gallery</h1>
-			<a href="https://github.com/KennethanCeyer/jQuery-Flat-Design-Gallery" target="_blank" class="btn btn-primary">View project on the Github</a>
+			<a href="https://github.com/KennethanCeyer/PIGNOSE-Gallery" target="_blank" class="ui button primary">View project on Github</a>
+			<a href="https://github.com/KennethanCeyer/PIGNOSE-Gallery/archive/master.zip" target="_blank" class="ui button teal">Download Zip</a>
 		</div>
-		<div id="visual">
-			<div class="gallery">
-				<img src="https://images.unsplash.com/photo-1434064511983-18c6dae20ed5?q=80&fm=jpg&s=c45f3bff08de3f8509e90f66aab9393f" alt="" />
-				<img src="https://images.unsplash.com/photo-1439396087961-98bc12c21176?q=80&fm=jpg&s=bce7579fe32b464cc2d53c5c144a2de4" alt="" />
-				<img src="https://images.unsplash.com/photo-1439003511744-2a0490ea0a88?q=80&fm=jpg&s=4dd5809698048edf8b82eedb82ca8cec" alt="" />
-				<img src="https://images.unsplash.com/photo-1438978280647-f359d95ebda4?q=80&fm=jpg&s=73cb1239b517411534379c92660b2660" alt="" />
-				<img src="https://images.unsplash.com/photo-1438109519352-a52c41243c1a?q=80&fm=jpg&s=5e94365bd19daae00de012e317152490" alt="" />
-			</div>
+		<div class="gallery">
+			<span class="ui blue right ribbon label">v1.0.1</span>
+			<div class="gallery-item"><img src="demo/img/sample0.jpg" alt="" /></div>
+			<div class="gallery-item"><img src="demo/img/sample1.jpg" alt="" /></div>
+			<div class="gallery-item"><img src="demo/img/sample2.jpg" alt="" /></div>
+			<div class="gallery-item"><img src="demo/img/sample3.jpg" alt="" /></div>
+			<div class="gallery-item"><img src="demo/img/sample4.jpg" alt="" /></div>
+
 			<div class="gallery-thumbnails">
-				<a href="#"><img src="https://images.unsplash.com/photo-1434064511983-18c6dae20ed5?q=80&fm=jpg&s=c45f3bff08de3f8509e90f66aab9393f" alt="" /></a>
-				<a href="#"><img src="https://images.unsplash.com/photo-1439396087961-98bc12c21176?q=80&fm=jpg&s=bce7579fe32b464cc2d53c5c144a2de4" alt="" /></a>
-				<a href="#"><img src="https://images.unsplash.com/photo-1439003511744-2a0490ea0a88?q=80&fm=jpg&s=4dd5809698048edf8b82eedb82ca8cec" alt="" /></a>
-				<a href="#"><img src="https://images.unsplash.com/photo-1438978280647-f359d95ebda4?q=80&fm=jpg&s=73cb1239b517411534379c92660b2660" alt="" /></a>
-				<a href="#"><img src="https://images.unsplash.com/photo-1438109519352-a52c41243c1a?q=80&fm=jpg&s=5e94365bd19daae00de012e317152490" alt="" /></a>
+				<a href="#"><img src="demo/img/sample0.jpg" alt="" /></a>
+				<a href="#"><img src="demo/img/sample1.jpg" alt="" /></a>
+				<a href="#"><img src="demo/img/sample2.jpg" alt="" /></a>
+				<a href="#"><img src="demo/img/sample3.jpg" alt="" /></a>
+				<a href="#"><img src="demo/img/sample4.jpg" alt="" /></a>
 			</div>
 		</div>
 		<div id="content" class="article">
-			<h3>options</h3>
-			<table class="table table-striped table-hover">
+			<h3><span>options</span></h3>
+			<table class="ui table celled">
 				<thead>
 					<tr>
 						<th>name</th>
-						<th>value</th>
+						<th>type</th>
 						<th>default</th>
 						<th>description</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td>focus</td>
-						<td><div class="label label-primary">number</div></td>
+						<td>
+							<strong>focus</strong>
+						</td>
+						<td><div class="ui label teal small">number</div></td>
 						<td>0</td>
-						<td>initial index of focused image.</td>
+						<td>You can set first showing image by give index (number type / start from 0).</td>
 					</tr>
 					<tr>
-						<td>list</td>
-						<td><div class="label label-primary">jQuery object</div></td>
+						<td>
+							<strong>thumbnails</strong>
+						</td>
+						<td><div class="ui label teal small">selector string</div></td>
 						<td>null</td>
-						<td>the gallery thumbnails for gallery views.</td>
+						<td>Gallery's thumbnails wrapper selctor string.</td>
 					</tr>
 					<tr>
-						<td>lineWidth</td>
-						<td><div class="label label-primary">number</div></td>
-						<td>3</td>
-						<td>line width for focus style.</td>
+						<td>
+							<strong>time</strong>
+						</td>
+						<td><div class="ui label teal small">number</div></td>
+						<td>3000</td>
+						<td>Millisecond time of the delay the auto change animation.</td>
 					</tr>
 					<tr>
-						<td>lineColor</td>
-						<td><div class="label label-primary">string</div></td>
-						<td>#d81208</td>
-						<td>line color for focus style.</td>
-					</tr>
-					<tr>
-						<td>time</td>
-						<td><div class="label label-primary">number</div></td>
-						<td>2400</td>
-						<td>the millisecond time for change to animation.</td>
-					</tr>
-					<tr>
-						<td>auto</td>
-						<td><div class="label label-primary">boolean</div></td>
+						<td>
+							<strong>auto</strong>
+						</td>
+						<td><div class="ui label teal small">boolean</div></td>
 						<td>true</td>
-						<td>if this property is on, you can pause/play to change the gallery by mouseover or mouseout.</td>
+						<td>If you turn on this option, You can control to pause/play of the gallery by mouseover, and mouseout event.</td>
 					</tr>
 					<tr>
-						<td>hover</td>
-						<td><div class="label label-primary">boolean</div></td>
+						<td>
+							<strong>hover</strong>
+						</td>
+						<td><div class="ui label teal small">boolean</div></td>
 						<td>true</td>
-						<td>if this property is on, you can control them by mouseover on thumbnails</td>
+						<td>If you set this option to true, You can switch images by hover on each of thumbnails</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 		<div id="bower" class="article">
-			<h3>bower</h3>
+			<h3><span>bower</span></h3>
 			<blockquote><p>If you are using bower serive.</p></blockquote>
 			<pre><code class="language-bash">bower install pg-gallery</code></pre>
 		</div>
 		<div id="bower" class="article">
-			<h3>npm</h3>
+			<h3><span>npm</span></h3>
 			<blockquote><p>If you are using npm serive.</p></blockquote>
 			<pre><code class="language-bash">npm install pg-gallery</code></pre>
 		</div>
 		<div id="sample" class="article">
-			<h3>sample</h3>
-			<ul class="nav nav-tabs tab">
-				<li role="presentation" class="active"><a href="#html" data-toggle="tab" aria-controls="html">HTML</a></li>
-				<li role="presentation"><a href="#javascript" data-toggle="tab" aria-controls="javascript">Javascript</a></li>
-			</ul>
-			<div class="tab-content">
-				<div role="tabpanel" class="tab-pane active" id="html">
-					<pre><code class="language-markup">&lt;div id=&quot;visual&quot;&gt;
-	&lt;div class=&quot;gallery&quot;&gt;
-		&lt;img src=&quot;[[img src]]&quot; alt=&quot;&quot; /&gt;
-		&lt;img src=&quot;[[img src]]&quot; alt=&quot;&quot; /&gt;
-		&lt;img src=&quot;[[img src]]&quot; alt=&quot;&quot; /&gt;
-	&lt;/div&gt;
+			<h3><span>sample</span></h3>
+			<div class="ui top pointing secondary menu">
+				<a role="presentation" class="item active" data-tab="html">HTML</a>
+				<a role="presentation" class="item" data-tab="javascript">Javascript</a>
+				<a role="presentation" class="item" data-tab="css">CSS</a>
+			</div>
+			<div role="tabpanel" class="ui tab segment active" data-tab="html">
+				<pre><code class="language-markup">&lt;div class=&quot;gallery&quot;&gt;
+	&lt;div class=&quot;gallery-item&quot;&gt;&lt;img src=&quot;demo/img/sample0.jpg&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;
+	&lt;div class=&quot;gallery-item&quot;&gt;&lt;img src=&quot;demo/img/sample1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;
+	&lt;div class=&quot;gallery-item&quot;&gt;&lt;img src=&quot;demo/img/sample2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;
+	&lt;div class=&quot;gallery-item&quot;&gt;&lt;img src=&quot;demo/img/sample3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;
+	&lt;div class=&quot;gallery-item&quot;&gt;&lt;img src=&quot;demo/img/sample4.jpg&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;
+
 	&lt;div class=&quot;gallery-thumbnails&quot;&gt;
-		&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;[[thumbnail src]]&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-		&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;[[thumbnail src]]&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-		&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;[[thumbnail src]]&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+		&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;demo/img/sample0.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+		&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;demo/img/sample1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+		&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;demo/img/sample2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+		&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;demo/img/sample3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+		&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;demo/img/sample4.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
 	&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-				</div>
-				<div role="tabpanel" class="tab-pane" id="javascript">
-					<pre><code class="language-js">$(function() {
-	$('#visual .gallery').pignoseGallery({
-		list: $('#visual .gallery-thumbnails')
+			</div>
+			<div role="tabpanel" class="ui tab segment" data-tab="javascript">
+				<pre><code class="language-js">$(function() {
+	$('.gallery').pignoseGallery({
+		thumbnails '.gallery-thumbnails'
 	});
 });</code></pre>
-				</div>
+			</div>
+			<div role="tabpanel" class="ui tab segment" data-tab="css">
+				<pre><code class="language-css">.pignose-gallery {
+	margin: 0 auto;
+	width: 600px;
+	height: 360px;
+}</code></pre>
 			</div>
 		</div>
 	</div>

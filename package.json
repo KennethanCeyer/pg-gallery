@@ -1,6 +1,6 @@
 {
   "name": "pg-gallery",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The slider to support prallax animation with jQuery.",
   "main": "index.html",
   "scripts": {
@@ -23,5 +23,13 @@
   "bugs": {
     "url": "https://github.com/KennethanCeyer/PIGNOSE-Gallery/issues"
   },
-  "homepage": "https://github.com/KennethanCeyer/PIGNOSE-Gallery#readme"
+  "homepage": "https://github.com/KennethanCeyer/PIGNOSE-Gallery#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-csslint": "^2.0.0",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0"
+  }
 }

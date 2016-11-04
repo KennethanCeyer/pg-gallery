@@ -1,27 +1,28 @@
-/****************************************
+/************************************************************************
 *
-*  - PIGNOSE Gallery JS
-*  - DATE    2014-12-26
-*  - AUTHOR  PIGNOSE(http://pigno.se)
-*  - VERSION 0.0.2
-*  - LICENCE MIT
+*  [ PIGNOSE Gallery ]
+*  @ DATE    2016-11-05
+*  @ AUTHOR  PIGNOSE(https://www.github.com/KennethanCeyer)
+*  @ LICENCE MIT
 *
-****************************************/
+************************************************************************/
 
 (function($) {
-	// Plugin common configuration.
+	'use strict';
+	/**********************************************************
+	 *
+	 * [ START PLUGIN SETTINGS ]
+	 * 
+	 * @ This plugin structure was made since 2014
+	 *
+	 *********************************************************/
 	var _config = {
-		name:       'PIGNOSE Gallery JS',
-		createDate: '2014-12-26',
-		updateDate: '2014-12-26',
-		version:    '0.0.2',
-		author:     'kenneth ceyer',
-		email:      'kennethan@nhpcw.com',
+		name: 'PIGNOSE Gallery JS',
 		dev:        {
 			id: 'pignose_gallery',
 			handler: '.pignoseGalleryHandler'
 		},
-		plugin:     {
+		plugin: {
 			index: 0
 		}
 	};
@@ -78,64 +79,66 @@
 		init: function(options) {
 			var opt = $.extend({
 				focus: 0,
-				lists: null,
-				lineWidth: 3,
-				lineColor: '#d81208',
-				time: 2400,
-				animTime: 300,
+				thumbnails: null,
+				time: 3000,
 				auto: true,
 				hover: true
 			}, options), $this = this;
 			return $this.each(function() {
 				var $this = $(this);
-				_config.plugin.object = $this;
-				_config.plugin.views  = $this.children();
+				_config.plugin.object = $this.addClass('pignose-gallery');
+				_config.plugin.views  = $this.find('.gallery-item').addClass('pignose-gallery-item');
 				_interface._save();
 				_interface._excute(_interface.render, opt);
 			});
 		},
 		render: function(opt) {
-			if(typeof opt.lists !== 'undefined' && opt.lists !== null) {
+			if(typeof opt.thumbnails !== 'undefined' && opt.thumbnails !== null) {
 				var $this = $(this);
 				_interface._load($this);
-				_config.plugin.lists = opt.lists.find('> * > a').each(function(i, e) {
+				_config.plugin.list = $this.find(opt.thumbnails).addClass('pignose-gallery-thumbnails').find('a').addClass('pignose-gallery-thumbnails-item').each(function(i, e) {
 					var $this = $(this);
-					var $border_content = $('<span class="pignose_border">&nbsp;</span>');
-					$this.css({
-						position: 'relative'
-					});
-					$border_content.css({
-						display:  'none',
-						position: 'absolute',
-						top:      0,
-						left:     0,
-						width:    $this.width() - opt.lineWidth * 2,
-						height:   $this.height() - opt.lineWidth * 2,
-						border:   opt.lineWidth + 'px solid ' + opt.lineColor
-					});
-					if(i == _config.plugin.index) {
-						$border_content.css('display', 'block');
-					}
-					$border_content.appendTo($this);
+					var $border = $('<span class="pignose-gallery-border">&nbsp;</span>');
+					$border.appendTo($this);
 				});
-				_config.plugin.max   = opt.lists.children().length;
+				_config.plugin.max   = _config.plugin.list.children().length;
 				_config.plugin.index = ((opt.focus + 1) > _config.plugin.max)? (_config.plugin.max - 1):opt.focus;
-				$this.eq(_config.plugin.index).siblings().hide();
 				_interface._save();
 				_interface._excute(_interface.process, opt);
 			}
 		},
 		process: function(opt) {
-			var $this = $(this), _t;
+			var $this = $(this), _t = null, _p = null;
+			var change = function() {
+				_config.plugin.list.find('.pignose-gallery-border.active').removeClass('active');
+				_config.plugin.list.eq(_config.plugin.index).children('.pignose-gallery-border').addClass('active');
+				var $target = (_config.plugin.views.eq(_config.plugin.index) || _config.plugin.views.eq(0)).each(function() {
+					var $this = $(this);
+					$this.addClass('anim-start');
+					setTimeout(function() {
+						$this.addClass('active')
+					}, 25);
+				}).siblings('.pignose-gallery-item').removeClass('active');
+				try {
+					if(_p !== null) {
+						clearTimeout(_p);
+					}
+				} catch(e) { ; }
+				_p = setTimeout(function() {
+					$target.removeClass('anim-start');
+				}, 300);
+				_interface._save();
+			};
+
 			_interface._load($this);
 			if(opt.auto === true) {
-				_interface._bind($this.add(_config.plugin.lists), 'mouseover', function() {
+				_interface._bind($this.add(_config.plugin.list), 'mouseover', function() {
 					try {
 						clearInterval(_t);
 					}
 					catch (e) { ; }
 				});
-				_interface._bind($this.add(_config.plugin.lists), 'mouseout', function() {
+				_interface._bind($this.add(_config.plugin.list), 'mouseout', function() {
 					try {
 						clearInterval(_t);
 					}
@@ -143,34 +146,26 @@
 					_t = setInterval(function() {
 						_interface._load($this);
 						_config.plugin.index = (_config.plugin.index + 1) % _config.plugin.max;
-						_config.plugin.lists.find('.pignose_border:visible').hide();
-						_config.plugin.lists.eq(_config.plugin.index).children('.pignose_border').show();
-						(_config.plugin.views.eq(_config.plugin.index) || _config.plugin.views.eq(0)).show().siblings().hide();
-						_interface._save();
+						change.call();
 					}, opt.time);
 				}, true);
 			}
-			if(opt.hover) {
-				_interface._bind(_config.plugin.lists, 'mouseover', function() {
+			if(opt.hover === true) {
+				_interface._bind(_config.plugin.list, 'mouseover', function() {
 					var $this = $(this);
-					_config.plugin.index = $this.parent().index();
-					_config.plugin.lists.find('.pignose_border:visible').hide();
-					_config.plugin.lists.eq(_config.plugin.index).children('.pignose_border').show();
-					(_config.plugin.views.eq(_config.plugin.index) || _config.plugin.views.eq(0)).show().siblings().hide();
-					_interface._save();
+					_config.plugin.index = $this.index();
+					change.call();
 				});
 			}
-			_interface._bind(_config.plugin.lists, 'click', function(event) {
-				if(opt.hover !== true) {
-					var $this = $(this);
-					_config.plugin.index = $this.parent().index();
-					_config.plugin.lists.find('.pignose_border:visible').hide();
-					_config.plugin.lists.eq(_config.plugin.index).children('.pignose_border').show();
-					(_config.plugin.views.eq(_config.plugin.index) || _config.plugin.views.eq(0)).show().siblings().hide();
-					_interface._save();
-				}
+
+			_interface._bind(_config.plugin.list, 'click', function(event) {
 				event.preventDefault();
+				var $this = $(this);
+				_config.plugin.index = $this.index();
+				change.call();
 			});
+
+			_interface._trigger(_config.plugin.list.eq(_config.plugin.index), 'click');
 		}
 	}
 

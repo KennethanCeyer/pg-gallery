@@ -1,7 +1,7 @@
 PIGNOSE-Gallery
 ===============
 
-> jQuery simple gallery plugin.
+> PIGNOSE Gallery is so simple and fast gallery style component.
 
 [![npm version](https://badge.fury.io/js/pg-gallery.svg)](https://badge.fury.io/js/pg-gallery) [![Bower version](https://badge.fury.io/bo/pg-gallery.svg)](https://badge.fury.io/bo/pg-gallery) [![Join the chat at https://gitter.im/KennethanCeyer/PIGNOSE](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/KennethanCeyer/PIGNOSE?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -24,61 +24,58 @@ Check demo page and enjoy it! [See Demo](http://www.pigno.se/barn/PIGNOSE-Galler
 
  ```javascript
 $(function() {
-	$('#visual .gallery').pignoseGallery({
-		list: $('#visual .gallery-thumbnails')
+	$('.gallery').pignoseGallery({
+		thumbnails: '.gallery-thumbnails'
 	});
 });
 ```
 4. Markup structure must be like below.
 
  ```html
-<div id="visual">
-	<div class="gallery">
-		<img src="[[img src]]" alt="" />
-		<img src="[[img src]]" alt="" />
-		<img src="[[img src]]" alt="" />
-	</div>
+<div class="gallery">
+	<div class="gallery-item"><img src="demo/img/sample0.jpg" alt="" /></div>
+	<div class="gallery-item"><img src="demo/img/sample1.jpg" alt="" /></div>
+	<div class="gallery-item"><img src="demo/img/sample2.jpg" alt="" /></div>
+	<div class="gallery-item"><img src="demo/img/sample3.jpg" alt="" /></div>
+	<div class="gallery-item"><img src="demo/img/sample4.jpg" alt="" /></div>
+
 	<div class="gallery-thumbnails">
-		<a href="#"><img src="[[thumbnail src]]" alt="" /></a>
-		<a href="#"><img src="[[thumbnail src]]" alt="" /></a>
-		<a href="#"><img src="[[thumbnail src]]" alt="" /></a>
+		<a href="#"><img src="demo/img/sample0.jpg" alt="" /></a>
+		<a href="#"><img src="demo/img/sample1.jpg" alt="" /></a>
+		<a href="#"><img src="demo/img/sample2.jpg" alt="" /></a>
+		<a href="#"><img src="demo/img/sample3.jpg" alt="" /></a>
+		<a href="#"><img src="demo/img/sample4.jpg" alt="" /></a>
 	</div>
 </div>
 ```
 
 ### If you use Bower
 
-1. open a command line and type this
-
  ```shell
 bower install pg-gallery
  ```
- 
-2. move `assets/js/pignose.gallery.min.js` to your project folder.
 
 ### If you use npm
-
-1. open a command line and type this
 
  ```shell
 npm install pg-gallery
  ```
+  
+Move `dist/pignose.gallery.min.js`, `dist/pignose.gallery.min.css` to your project folder.
 
 ## Options
 | name | value           | default | description |
 |------|-----------------|---------|-------------|
-| focus | `number` | 0 | initial index of focused image. |
-| list | `jQuery object` | null | the gallery thumbnails for gallery views. |
-| lineWidth | `number` | 3 | line width for focus style. |
-| lineColor | `string` | #d81208 | line color for focus style. |
-| time | `number` | 2400 | the millisecond time for change to animation. |
-| auto | `boolean` | true | if this property is on, you can pause/play to change the gallery by mouseover or mosueout. |
-| hover | `boolean` | true | if this property is on, you can control them by mouseover on thumbnails. |
+| focus | `number` | 0 | You can set first showing image by give index (number type / start from 0). |
+| thumbnails | `selector string` | null | Gallery's thumbnails wrapper selctor string. |
+| time | `number` | 3000 | Millisecond time of the delay the auto change animation. |
+| auto | `boolean` | true | 	If you turn on this option, You can control to pause/play of the gallery by mouseover, and mouseout event. |
+| hover | `boolean` | true | If you set this option to true, You can switch images by hover on each of thumbnails. |
 
 ## Issues
 
-> We are welcome to receive bug reports.
+> We welcome to receive bug reports.
 
-Please report to us, If you find some problems.
+Please report to us, When you find some problems.
 
 Thank you!

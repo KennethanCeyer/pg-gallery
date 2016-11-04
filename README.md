@@ -14,9 +14,11 @@ Check demo page and enjoy it! [See Demo](http://www.pigno.se/barn/PIGNOSE-Galler
 ### Description
 
 - This plugin supports IE8+, Firefox, Chrome, Safari, Opera browser version.
-- This plugin needs `jQuery library 1.11.x+`.
+- This plugin needs `jQuery library 1.11.x` higher version.
 
-## Usage
+----
+
+### Usage
 
 1. Download or Clone the sources.
 2. Import jQuery library from [here](http://jquery.com/download/)
@@ -49,13 +51,13 @@ $(function() {
 </div>
 ```
 
-### If you use Bower
+#### If you use Bower
 
  ```shell
 bower install pg-gallery
  ```
 
-### If you use npm
+#### If you use npm
 
  ```shell
 npm install pg-gallery
@@ -63,7 +65,9 @@ npm install pg-gallery
   
 Move `dist/pignose.gallery.min.js`, `dist/pignose.gallery.min.css` to your project folder.
 
-## Options
+----
+
+### Options
 | name | value           | default | description |
 |------|-----------------|---------|-------------|
 | focus | `number` | 0 | You can set first showing image by give index (number type / start from 0). |
@@ -72,7 +76,9 @@ Move `dist/pignose.gallery.min.js`, `dist/pignose.gallery.min.css` to your proje
 | auto | `boolean` | true | 	If you turn on this option, You can control to pause/play of the gallery by mouseover, and mouseout event. |
 | hover | `boolean` | true | If you set this option to true, You can switch images by hover on each of thumbnails. |
 
-## Issues
+----
+
+### Issues
 
 > We welcome to receive bug reports.
 

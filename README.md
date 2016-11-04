@@ -78,10 +78,9 @@ Move `dist/pignose.gallery.min.js`, `dist/pignose.gallery.min.css` to your proje
 
 ----
 
-### Issues
+### Question
 
-> We welcome to receive bug reports.
+If you found something problem of this plugin, or you have some question.
 
-Please report to us, When you find some problems.
+Please send me a message to use either [gitter](https://gitter.im/KennethanCeyer/PIGNOSE) or [Github issue](https://github.com/KennethanCeyer/PIGNOSE-Gallery/issues). (gitter url is on the top of the manual)
 
-Thank you!

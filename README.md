@@ -25,11 +25,11 @@ Check demo page and enjoy it! [See Demo](http://www.pigno.se/barn/PIGNOSE-Galler
 3. Insert snippets like below.
 
  ```javascript
-$(function() {
-	$('.gallery').pignoseGallery({
-		thumbnails: '.gallery-thumbnails'
+	$(function() {
+		$('.gallery').pignoseGallery({
+			thumbnails: '.gallery-thumbnails'
+		});
 	});
-});
 ```
 4. Markup structure must be like below.
 
